@@ -25,16 +25,16 @@ let submit = document.querySelector('.send');
 
 submit.addEventListener('click', function(event) {  
     event.preventDefault();
-    let mailCheck = false; 
 
+    let mailCheck = false; 
     for (let i = 0; i < mailList.length; i++){
-        if (userMail == mailList[i]){
+        if (userMail.value == mailList[i]){
             mailCheck = true;
         }
     } 
     if (mailCheck == true) {
-        console.log('Ti abbiamo trovato! Sei ' + mailList[i]);
-        result.innerHTML = `Ti abbiamo trovato! Sei ${mailList[i]}`
+        console.log('Ti abbiamo trovato! Sei ' + userMail.value );
+        result.innerHTML = `Ti abbiamo trovato! Sei ${userMail.value }`;
     } else {
         console.log('La tua mail non esiste nei nostri big data server super fotonici');
         result.innerHTML = 'Tu non sei uno di noi. Vai via!';
