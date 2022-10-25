@@ -11,3 +11,22 @@ Consigli del giorno:
 3. si ma noi cosa vogliamo fare?
 4. torniamo a scrivere in italiano
 5. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"*/
+
+
+const numberList = [1, 2, 3, 4, 5, 6];
+
+let numUser = parseInt(prompt('Inserisci un numero intero da 1 a 6'));
+let numPC = Math.floor(Math.random()* (6 - 1 + 1)) + 1;6
+
+console.log('Hai scelto il numero ' + numUser);
+console.log('Il computer ha scelto il numero ' + numPC);
+
+for (let i = 1; i<=6; i++) {
+    if (numUser > numPC) {
+        console.log('Hai vinto!');
+    } else if (numUser < numPC) {
+        console.log('Il computer ha vinto!');
+    } else if (numUser === numPC) {
+        console.log('Pareggio!');
+    }
+}
