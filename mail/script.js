@@ -18,20 +18,25 @@ Consigli del giorno:
 5. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"*/
 
 const mailList = ['gigino@mail.it', 'pasqualino@mail.it', 'addolorata@mail.it', 'tortellino@mail.it'];
-//const userMail = document.querySelector('#input-mail').value;
-const userMail = prompt('Inserisci la tua mail. Suggerimenti: gigino@mail.it pasqualino@mail.it addolorata@mail.it tortellino@mail.it');
+const userMail = document.querySelector('#input-mail');
+//const userMail = prompt('Inserisci la tua mail. Suggerimenti: gigino@mail.it pasqualino@mail.it addolorata@mail.it tortellino@mail.it');
+const result = document.querySelector('.result');
+let submit = document.querySelector('.send');
 
+submit.addEventListener('click', function(event) {  
+    event.preventDefault();
+    let mailCheck = false; 
 
-// Ciclo di verifica mail
-for (let i = 0; i < mailList.length; i++){
-    if (userMail == mailList[i] ){
-        console.log('Ti abbiamo trovato! Sei ' + mailList[i])
+    for (let i = 0; i < mailList.length; i++){
+        if (userMail == mailList[i]){
+            mailCheck = true;
+        }
+    } 
+    if (mailCheck == true) {
+        console.log('Ti abbiamo trovato! Sei ' + mailList[i]);
+        result.innerHTML = `Ti abbiamo trovato! Sei ${mailList[i]}`
     } else {
         console.log('La tua mail non esiste nei nostri big data server super fotonici');
-    }
-}
-
-// Problema: mi ripete il console log anche del messaggio sbagliato e per ultimo mi da quello corretto.
-
-
-// da creare eventi click, genera, print su html 
+        result.innerHTML = 'Tu non sei uno di noi. Vai via!';
+    } 
+})
