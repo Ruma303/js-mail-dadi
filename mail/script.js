@@ -17,14 +17,16 @@ Consigli del giorno:
 4. torniamo a scrivere in italiano
 5. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"*/
 
-const mailList = ['gigino@mail.it', 'pasqualino@mail.it', 'addolorata@mail.it', 'tortellino@mail.it']
-const userMail = prompt('Qual è la tua mail? Soluzioni: gigino@mail.it pasqualino@mail.it addolorata@mail.it tortellino@mail.it');
-
+const mailList = ['gigino@mail.it', 'pasqualino@mail.it', 'addolorata@mail.it', 'tortellino@mail.it'];
+//const userMail = document.querySelector('#input-mail').value;
+const userMail = prompt('Inserisci la tua mail. Suggerimenti: gigino@mail.it pasqualino@mail.it addolorata@mail.it tortellino@mail.it');
 // Ciclo di verifica mail
 for (let i = 0; i < mailList.length; i++){
     if (userMail == mailList[i] ){
         console.log('Ti abbiamo trovato!')
-    } else {
+    } else if (userMail != mailList) {
         console.log('La tua mail non esiste nei nostri big data server super fotonici');
     }
 }
+
+// Problema: mi ripete il console log anche del messaggio sbagliato e per ultimo mi da quello corretto.
