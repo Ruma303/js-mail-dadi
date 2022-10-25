@@ -22,7 +22,9 @@ console.log('Hai scelto il numero ' + numUser);
 console.log('Il computer ha scelto il numero ' + numPC);
 
 for (let i = 1; i<=6; i++) {
-    if (numUser > numPC) {
+    if (isNaN(numUser) != !isNaN){
+        console.log('Non hai scelto un numero, con te non ci gioco più :(');
+    } else if (numUser > numPC) {
         console.log('Hai vinto!');
     } else if (numUser < numPC) {
         console.log('Il computer ha vinto!');
